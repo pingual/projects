@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recherche de Films</title>
+    <style>
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colonnes par ligne */
+            grid-gap: 20px; /* Espacement entre les éléments */
+        }
+        .movie-item {
+            text-align: center;
+        }
+        .movie-poster {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recherche de Films</h1>
+    <form action="/search" method="post">
+        <input type="text" name="search_query" placeholder="Rechercher un film">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <div class="movie-grid">
+        {% for result in results %}
+            <div class="movie-item">
+                <img class="movie-poster" src="https://image.tmdb.org/t/p/w185{{ result.poster_path }}" alt="{{ result.title }} Poster">
+                <p>{{ result.title }} ({{ result.release_date.split('-')[0] }})</p>
+                <form action="/add_movie" method="post">
+                    <input type="hidden" name="movie_id" value="{{ result.id }}">
+                    <label for="watched_date">Date de visionnage :</label>
+                    <input type="date" name="watched_date" id="watched_date">
+                    <button type="submit">Ajouter</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="/">Retour à la liste des films</a>
+</body>
+</html>

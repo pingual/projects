@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recherche de Films par Acteur</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .grid-item {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recherche de Films par Acteur</h1>
+    <form action="/actor_search" method="post">
+        <input type="text" name="actor_name" placeholder="Nom de l'acteur">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <h2>Résultats de la recherche pour l'acteur "{{ actor_name }}"</h2>
+
+    <div class="grid-container">
+        {% if actor_movies %}
+            {% for movie in actor_movies %}
+                <div class="grid-item">
+                    <img src="https://image.tmdb.org/t/p/w185{{ movie.poster_path }}" alt="{{ movie.title }} Poster">
+                    <p>{{ movie.title }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Aucun film trouvé pour cet acteur.</p>
+        {% endif %}
+    </div>
+
+    <a href="/">Retour à la liste des films</a>
+</body>
+</html>

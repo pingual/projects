@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Films avec l'acteur {{ actor_name }}</title>
+</head>
+<body>
+    <h1>Films avec l'acteur {{ actor_name }}</h1>
+    <ul>
+        {% for movie in movies %}
+            <li><a href="{{ url_for('show_actors', movie_id=movie.id) }}">{{ movie.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Retour à la liste des films</a>
+</body>
+</html>

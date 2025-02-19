@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top 50 Acteurs les plus vus</title>
+    <style>
+        /* Style pour les liens d'acteurs */
+        .actor-link {
+            color: black; /* Couleur du texte noir */
+            text-decoration: none; /* Retire la décoration (soulignement) */
+        }
+        
+        /* Optionnel: changer la couleur du texte au survol */
+        .actor-link:hover {
+            color: black; /* Garder le texte noir au survol */
+        }
+    </style>
+</head>
+<body>
+    <h1>Top 50 Acteurs les plus vus</h1>
+    <ul>
+        {% for actor in top_actors %}
+            <li>
+                <a href="/actor_films/{{ actor['actor'] | urlencode }}" class="actor-link">
+                    {{ actor['actor'] }}
+                </a>
+                - {{ actor['count'] }} films
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Retour à la page d'accueil</a>
+</body>
+</html>

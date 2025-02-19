@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Films</title>
+</head>
+<body>
+    <h1>Liste des Films</h1>
+    <p>Nombre de films dans la base de données : {{ movies|length }}</p>
+    <!-- Ajouter un lien vers les 50 acteurs les plus vus -->
+    <a href="/top_actors">Voir les 50 acteurs les plus vus</a>
+    <br><br>
+    <!-- Bouton pour afficher la somme de la durée -->
+    <button onclick="calculateTotalDuration()">Afficher la somme de la durée</button>
+    <p id="totalDuration" style="display: none;">Somme de la durée de tous les films : <span id="resultDuration"></span> minutes</p>
+    
+    <a href="/search">Ajouter un Film</a>
+    <ul>
+        {% for movie in movies|reverse %}
+            <li>
+                {{ movie.title }}
+                <a href="{{ url_for('show_actors', movie_id=movie.id) }}">Voir les Acteurs</a>
+                <!-- Ajout de la classe "movie-duration" pour faciliter la sélection dans le script -->
+                <span class="movie-duration" data-movie-id="{{ movie.identifiant }}" style="display: none;">{{ movie.duration }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/actor_search">Rechercher par Acteur</a>
+
+    <!-- Script pour afficher la somme de la durée -->
+    <script>
+        async function calculateTotalDuration() {
+            try {
+                console.log("Salut");
+                // Appeler la route pour récupérer la somme de la durée
+                var response = await fetch('/total_duration');
+                var data = await response.json();
+                console.log("Ca va");
+                // Afficher le résultat
+                document.getElementById('resultDuration').innerText = data.total_duration;
+                document.getElementById('totalDuration').style.display = 'block';
+            } catch (error) {
+                console.error('Erreur lors du calcul de la somme de la durée :', error);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Acteurs du Film</title>
+</head>
+<body>
+    
+   <img src="https://image.tmdb.org/t/p/w185{{ image }}" alt="{{ titre }} Poster">
+    <h1>{{ titre }}</h1>
+    <p>Date de visionnage: {{date_vu}}</p>
+    <p>Réalisateur: {{ directeur }}</p>
+    <p>Date de sortie: {{ date }}</p>
+    <p>Synopsis: {{ synopsis }}</p>
+    <h2>Acteurs du Film</h2>
+    <ul>
+        {% for actor in actors %}
+            <li>{{ actor.name }} ({{ actor.count }} films)
+                <a href="/actor_films/{{ actor.name }}">Voir les autres films</a>
+            </li>
+            {% if actor.in_top_actors %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('delete_movie', movie_id=identifiant) }}">Supprimer ce film<br><br></a>
+    <a href="/">Retour à la liste des films</a>
+</body>
+</html>
