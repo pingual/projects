@@ -1,0 +1,1 @@
+execute as @e[type=wandering_trader,tag=!WTF] run function wandering_trader:debut
