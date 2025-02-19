@@ -1,8 +1,8 @@
 # Liens vers les fichiers bot.py
 
-Voici les liens vers les fichiers `bot.py` de chaque projet :
+Voici quelques projets aboutis que j'ai réalisé durant ces dernières années :
 
-- [Base_de_donnée_films/bot.py](Base_de_donnée_films/bot.py)
+- [Site internet servant de base de données de films vus, tout en téléchargeant automatiquement des images des films et en permettant de voir dans quels autres films les acteurs ont joué](Base_de_donnée_films/app.py)
 - [Bots_discord/bot.py](Bots_discord/bot.py)
 - [Brainfuck/bot.py](Brainfuck/bot.py)
 - [Datapack_Serveur_Minecraft/bot.py](Datapack_Serveur_Minecraft/bot.py)
