@@ -1,0 +1,10 @@
+execute if entity @e[type=villager,tag=Trident,distance=..100] run tellraw @s "Le Trident de Poséidon est situé à moins de 100 blocs!"
+execute if entity @e[type=villager,tag=Trident,distance=100..300] run tellraw @s "Le Trident de Poséidon est situé entre 100 et 300 blocs!"
+execute if entity @e[type=villager,tag=Trident,distance=300..600] run tellraw @s "Le Trident de Poséidon est situé entre 300 et 600 blocs!"
+execute if entity @e[type=villager,tag=Trident,distance=600..900] run tellraw @s "Le Trident de Poséidon est situé entre 600 et 900 blocs!"
+execute if entity @e[type=villager,tag=Trident,distance=900..1200] run tellraw @s "Le Trident de Poséidon est situé entre 900 et 1200 blocs!"
+execute if entity @e[type=villager,tag=Trident,distance=1200..2400] run tellraw @s "Le Trident de Poséidon est situé entre 1200 et 2400 blocs!"
+execute if entity @e[type=villager,tag=Trident,distance=2400..3800] run tellraw @s "Le Trident de Poséidon est situé entre 2400 et 3800 blocs!"
+execute if entity @e[type=villager,tag=Trident,distance=3800..5000] run tellraw @s "Le Trident de Poséidon est situé entre 3800 et 5000 blocs!"
+execute if entity @e[type=villager,tag=Trident,distance=5000..] run tellraw @s "Le Trident de Poséidon est situé à plus de 5000 blocs!"
+execute facing entity @e[tag=Trident] feet run tp @s ~ ~ ~ ~ ~
