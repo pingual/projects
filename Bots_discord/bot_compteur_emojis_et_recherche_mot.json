@@ -1,0 +1,229 @@
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+const client = new Discord.Client();
+const Promise = require('bluebird');
+const util = require('./util');
+
+const fs = require('fs');
+const logFilePath = 'messages_log.txt';
+
+const startDelim = 'latex$',
+  endDelim = '$';
+const tricheur = ["égrillard","aguichant","aigrefin","bélître","bandit","brigand","brigandeau","canaille","chevalier d'industrie","coquin","déluré","dérobeur","détrousseur","diable","escroc","escroqueur","espiègle","estampeur","faiseur","faquin","filou","flibustier","fripouille","futé","garnement","gonin","gredin","gueux","larron","leste","malhonnête","malicieux","malin","maroufle","pétillant","pendard","picaro","pickpocket","pipeur","pirate","polisson","rat d'hôtel","rossard","sacripant","scélérat","tricheur","truand","vaurien","vide-gousset"]
+
+const expressions = ["ainsi", "de ce fait", "donc", "en conséquence", "par conséquent", "partant", "conséquemment", "subséquemment", "par voie de fait", "par voie de conséquence", "ipso facto", "ergo", "de sorte que", "en découle", "c'est pourquoi", "il en résulte que", "ayant pour effet", "ce qui produit", "s'en déduit", "s'ensuit", "de fait", "à la suite de quoi", "aussi", "d'où", "en résulte", "alors", "ce qui entraîne", "en corollaire", "corollairement", "par déduction", "ensuite", "après"];
+
+client.once('ready', () => {
+  console.log(`Logged in as ${client.user.tag}`);
+  client.user.setActivity('');
+});
+
+client.on('messageReactionAdd', async (reaction, user) => {
+  // Ignorer les réactions des bots
+  if (user.bot) return;
+  // Obtenir l'identifiant de l'emoji de la réaction
+  const emojiId = reaction.emoji.id || reaction.emoji.name;
+
+  // Charger les données actuelles depuis le fichier JSON
+  let reactionsData = {};
+  try {
+    const data = fs.readFileSync('reactionCounts.json', 'utf-8');
+    reactionsData = JSON.parse(data);
+  } catch (error) {
+    console.error("Erreur lors de la lecture du fichier de réactions :", error);
+  }
+
+  // Incrémenter le compteur de réactions pour cet emoji
+  if (!reactionsData[emojiId]) {
+    reactionsData[emojiId] = [];
+  }
+
+  reactionsData[emojiId].push({
+    day: new Date(reaction.message.createdTimestamp).getDate(),
+    month: new Date(reaction.message.createdTimestamp).getMonth() + 1,
+    channel: reaction.message.channel.name,
+    messageId: reaction.message.id,
+    userId: user.id,
+    messageAuthorId: reaction.message.author.id,
+  });
+
+  // Enregistrer les données dans le fichier externe
+  fs.writeFileSync('reactionCounts.json', JSON.stringify(reactionsData, null, 2));
+});
+
+function fetchAndSaveMessagesWithReactions(channel, beforeId = null) {
+  const options = { limit: 100, before: beforeId };
+
+  channel.messages.fetch(options)
+    .then(messages => {
+      if (messages.size === 0) {
+        return;
+      }
+
+      let reactionsData = {};
+
+      try {
+        // Charger le contenu actuel du fichier s'il existe
+        const existingData = fs.readFileSync(logFilePath, 'utf8');
+        reactionsData = JSON.parse(existingData);
+      } catch (error) {
+        // Ignorer les erreurs de lecture (peut se produire si le fichier n'existe pas encore)
+      }
+
+      const fetchUsersForReaction = async (reaction) => {
+        try {
+          const users = await reaction.users.fetch();
+          users.forEach((user) => {
+            const userId = user.id;
+            const emoji = reaction.emoji.id || reaction.emoji.name;
+
+            if (!reactionsData[emoji]) {
+              reactionsData[emoji] = [];
+            }
+
+            reactionsData[emoji].push({
+              day: new Date(reaction.message.createdTimestamp).getDate(),
+              month: new Date(reaction.message.createdTimestamp).getMonth() + 1,
+              channel: reaction.message.channel.name,
+              messageId: reaction.message.id,
+              userId: userId,
+              messageAuthorId: reaction.message.author.id,
+            });
+          });
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      const processMessage = async (msg) => {
+        if (msg.reactions && msg.reactions.cache.size > 0) {
+          await Promise.all(msg.reactions.cache.map(fetchUsersForReaction));
+        }
+      };
+
+      const processAllMessages = async () => {
+        await Promise.all(messages.map(processMessage));
+
+        // Réécrire le fichier avec les données mises à jour
+        const updatedReactionsJSON = JSON.stringify(reactionsData, null, 2);
+        fs.writeFileSync(logFilePath, updatedReactionsJSON);
+
+        const lastMessageId = messages.lastKey();
+        fetchAndSaveMessagesWithReactions(channel, lastMessageId);
+      };
+
+      processAllMessages();
+    })
+    .catch(error => console.error(error));
+}
+
+client.on('message', msg => {
+  if (msg.author.bot) return;
+  if (msg.content.toUpperCase().includes("DUCOUP") || msg.content.toUpperCase().includes("DU COUP") || msg.content.toUpperCase().includes("DCP") || /\bducou\b/i.test(msg.content) || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('ducoup') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('dcp') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('ducoup') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('dkp') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('ducoup') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('duquup') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('duquoup') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('ducup') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('dukup') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('dukou') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('ducoup') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('dukoup')) {
+    msg.channel.send("Non, pas du coup! Utilise à la place: \"" + expressions[Math.floor(Math.random() * expressions.length)] + "\"");
+  } else if (msg.content.toLowerCase().startsWith('latex ')) {
+    const tex = msg.content.slice(6);
+    util.typeset(tex).then(image => {
+      util.attachImage(msg.channel, image);
+    }).catch(err => {
+      console.log(err);
+      msg.channel.send("test2");
+    });
+  } else {
+    const texStrings = msg.content.split(startDelim);
+
+    if (texStrings.length !== 1) {
+      texStrings.shift();
+
+      const promises = texStrings.map(elem => {
+        const end = elem.indexOf(endDelim),
+          tex = elem.slice(0, end);
+        return util.typeset(tex);
+      });
+
+      Promise.all(promises).then((images) => {
+        util.attachImages(msg.channel, images, 'LaTeX detected:');
+      }).catch(err => {
+        msg.channel.send("test");
+      });
+    }
+  }
+  if (msg.content.startsWith('!r') || msg.content.startsWith('!reaction') || msg.content.startsWith('!reac ')) {
+      const commandArgs = msg.content.split(' ');
+      const numEmojis = parseInt(commandArgs[1]) || 10;
+      if (numEmojis > 0 && numEmojis <= 100) {
+        handleReactionCommand(msg, numEmojis);
+      } else {
+        msg.channel.send(`Veuillez spécifier un nombre valide d'émojis à afficher. (positif et inférieur à 100)`);
+      }
+}
+  if (msg.content === '!savemessages') {
+    if (!msg.member.permissions.has('ADMINISTRATOR')) {
+      return msg.reply('Vous n\'avez pas la permission d\'utiliser cette commande.');
+    }
+
+    fetchAndSaveMessagesWithReactions(msg.channel);
+    msg.reply('Les messages ont été enregistrés avec succès dans le fichier texte.');
+  }
+  if (msg.content === '!nb') {
+      msg.reply(getDatabaseSize());
+  }
+});
+
+client.on('messageUpdate', (oldMessage, msg) => {
+  if (msg.content.toUpperCase().includes("DUCOUP") || msg.content.toUpperCase().includes("DU COUP") || msg.content.toUpperCase().includes("DU KOUP") || msg.content.toUpperCase().includes("DU KOU") || msg.content.toUpperCase().includes("DCP") || /\bducou\b/i.test(msg.content) || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('ducoup') || msg.content.toLowerCase().replace(/[^a-zA-Z ]/g, '').replace(/mbox/g, '').replace(/textbf/g, '').replace(/textit/g, '').replace(/underline/g, '').replace(/small/g, '').replace(/large/g, '').replace(/tiny/g, '').replace(/begin/g, '').replace(/end/g, '').replace(/itshape/g, '').replace(/emph/g, '').replace(/bfseries/g, '').replace(/mdseries/g, '').replace(/textnormal/g, '').replace(/textup/g, '').replace(/textsc/g, '').replace(/textmd/g, '').replace(/sffamily/g, '').replace(/rmfamily/g, '').replace(/\s/g, '').includes('dcp')) {
+    msg.reply("Non, pas du coup, petit " + tricheur[Math.floor(Math.random() * tricheur.length)] + "! Utilise à la place: \"" + expressions[Math.floor(Math.random() * expressions.length)] + "\"");
+  }
+});
+
+function handleReactionCommand(msg, numEmojis) {
+  // Charger les données actuelles depuis le fichier JSON
+  let reactionCounts = {};
+  try {
+    const data = fs.readFileSync('reactionCounts.json', 'utf-8');
+    reactionCounts = JSON.parse(data);
+  } catch (error) {
+    console.error("Erreur lors de la lecture du fichier de réactions :", error);
+  }
+  // Trier les réactions par nombre d'utilisations
+  const sortedReactions = Object.entries(reactionCounts)
+    .sort((a, b) => b[1].length - a[1].length)
+    .slice(0, numEmojis); // Obtenir les X premières réactions les plus utilisées
+
+  // Créer un message avec le classement des réactions
+  const reactionRanking = sortedReactions.map(([emoji, list], index) => {
+    const count = list.length;
+
+    // Vérifier si emoji est un nombre élevé, afficher sous forme de <:emoji:ID>
+    if (/^\d+$/.test(emoji)) {
+      return `${index + 1}. <:gaffe:${emoji}> (${count})`;
+    } else {
+      return `${index + 1}. ${emoji} (${count})`;
+    }
+  });
+
+  // Envoyer le message
+  msg.channel.send(`Classement des ${numEmojis} réactions les plus utilisées :\n${reactionRanking.join('\n')}`);
+}
+
+
+
+const jsonFilePath = 'reactionCounts.json';
+
+// Lire le fichier JSON et obtenir le nombre d'éléments
+function getDatabaseSize() {
+  try {
+    const data = fs.readFileSync(jsonFilePath, 'utf-8');
+    const jsonData = JSON.parse(data);
+
+    const numberOfEntries = Object.keys(jsonData).length;
+
+    return numberOfEntries;
+  } catch (error) {
+    return 0;
+  }
+}
+
+// Appeler la fonction pour obtenir le nombre d'éléments de la base de données
+
+client.login("token du bot discord");
