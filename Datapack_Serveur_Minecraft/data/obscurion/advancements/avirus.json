@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Connard de Virus"
+        },
+        "description": {
+            "text": "Tue 38 Chauves-Souris (19x2)"
+        },
+        "icon": {
+            "item": "minecraft:bat_spawn_egg"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:tres_difficile"
+    },
+    "parent": "obscurion:root"
+}

@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Voir le Verre à Moitié Plein ? "
+        },
+        "description": {
+            "text": "Remplir un chaudron d'eau sous l'eau"
+        },
+        "icon": {
+            "item": "minecraft:cauldron"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:moyen"
+    },
+    "parent": "obscurion:root"
+}

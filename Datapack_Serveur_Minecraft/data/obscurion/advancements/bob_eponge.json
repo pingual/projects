@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Bob l'Éponge"
+        },
+        "description": {
+            "text": "Utiliser une éponge"
+        },
+        "icon": {
+            "item": "minecraft:sponge"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:placed_block",
+            "conditions": {
+                "block": "minecraft:sponge"
+            }
+        }
+    },
+    "reward": {
+        "function": "advancement:moyen"
+    },
+    "parent": "obscurion:root"
+}

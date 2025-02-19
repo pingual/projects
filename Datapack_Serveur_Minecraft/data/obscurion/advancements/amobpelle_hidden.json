@@ -1,0 +1,44 @@
+{
+    "display": {
+        "title": {
+            "text": "Lucas larme à l’œil"
+        },
+        "description": {
+            "text": "Tuer un mob avec une pelle en diamant"
+        },
+        "icon": {
+            "item": "minecraft:diamond_shovel"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "equipment": {
+                        "mainhand": {
+                            "item": "minecraft:diamond_shovel"
+                        }
+                    }
+                },
+                "killing_blow": {
+                    "source_entity": {
+                        "equipment": {
+                            "mainhand": {
+                                "item": "minecraft:iron_shovel"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "new_advancements:mobpelle"
+    },
+    "parent": "obscurion:mobpelle"
+}

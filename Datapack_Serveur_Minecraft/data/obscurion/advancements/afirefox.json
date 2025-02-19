@@ -1,0 +1,34 @@
+{
+    "display": {
+        "title": {
+            "text": "Firefox"
+        },
+        "description": {
+            "text": "Tuer un renard avec du feu"
+        },
+        "icon": {
+            "item": "minecraft:flint_and_steel"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:fox",
+                    "flags": {
+                        "is_on_fire": true
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "new_advancements:firefox"
+    },
+    "parent": "obscurion:root"
+}

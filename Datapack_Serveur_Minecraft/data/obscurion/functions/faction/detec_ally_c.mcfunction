@@ -1,0 +1,5 @@
+execute if score CS ally matches 1.. if score SC ally matches 1.. run tellraw @s ["",{"text":"En alliance avec la faction "},{"text":"RCIF","color":"red"}]
+execute if score CN ally matches 1.. if score NC ally matches 1.. run tellraw @s ["",{"text":"En alliance avec la faction "},{"text":"Arcade","color":"gold"}]
+execute if score CL ally matches 1.. if score LC ally matches 1.. run tellraw @s ["",{"text":"En alliance avec la faction "},{"text":"Guilde des Aventuriers","color":"dark_red"}]
+execute if score CP ally matches 1.. if score PC ally matches 1.. run tellraw @s ["",{"text":"En alliance avec la faction "},{"text":"Ilunis","color":"blue"}]
+execute if score CG ally matches 1.. if score GC ally matches 1.. run tellraw @s ["",{"text":"En alliance avec la faction "},{"text":"République Sénatoriale de la Cité","color":"dark_green"}]

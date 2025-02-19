@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Déjà Vu!"
+        },
+        "description": {
+            "text": "Atteind une très grande vitesse en avançant pendant 1 kilomètre dans un bateau sur de la glace bleue!"
+        },
+        "icon": {
+            "item": "minecraft:oak_boat"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:impossible"
+    },
+    "parent": "obscurion:root"
+}

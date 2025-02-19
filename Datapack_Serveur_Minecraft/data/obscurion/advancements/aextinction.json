@@ -1,0 +1,27 @@
+{
+    "display": {
+        "title": {
+            "text": "Extinction"
+        },
+        "description": {
+            "text": "Tuer tous les mobs "
+        },
+        "icon": {
+            "item": "minecraft:netherite_sword",
+            "nbt": "{Enchantments:[{id:\"minecraft:aqua_affinity\",lvl:1}]}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:impossible"
+    },
+    "parent": "obscurion:root"
+}

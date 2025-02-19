@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "STONKS"
+        },
+        "description": {
+            "text": "Craft un bloc de netherite"
+        },
+        "icon": {
+            "item": "minecraft:netherite_block"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:difficile"
+    },
+    "parent": "obscurion:root"
+}

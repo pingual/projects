@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Étienne"
+        },
+        "description": {
+            "text": "Meurt dans le void"
+        },
+        "icon": {
+            "item": "minecraft:bedrock"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:tres_difficile"
+    },
+    "parent": "obscurion:root"
+}

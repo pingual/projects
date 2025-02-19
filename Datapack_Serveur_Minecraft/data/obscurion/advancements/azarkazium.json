@@ -1,0 +1,37 @@
+{
+    "display": {
+        "title": {
+            "text": "Zarkazium"
+        },
+        "description": {
+            "text": "Tuer un joueur avec une tnt"
+        },
+        "icon": {
+            "item": "minecraft:tnt"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:player",
+                    "flags": {
+                        "is_on_fire": false
+                    }
+                },
+                "killing_blow": {
+                    "is_explosion": true
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "new_advancement:zarkazium"
+    },
+    "parent": "obscurion:root"
+}

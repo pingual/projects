@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "ULTRA MEGA POWERED ULTIMATE STONKS"
+        },
+        "description": {
+            "text": "Avoir 10 bloc de chaque minerais du jeu sur soi"
+        },
+        "icon": {
+            "item": "minecraft:diamond_block"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:impossible"
+    },
+    "parent": "obscurion:root"
+}

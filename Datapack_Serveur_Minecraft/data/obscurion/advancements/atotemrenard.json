@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "What Does The Fox Say ?"
+        },
+        "description": {
+            "text": "Donne un totem d'immortalité à un renard"
+        },
+        "icon": {
+            "item": "minecraft:totem_of_undying"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:difficile"
+    },
+    "parent": "obscurion:root"
+}

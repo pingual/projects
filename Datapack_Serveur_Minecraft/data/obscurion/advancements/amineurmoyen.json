@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Mineur Motivé"
+        },
+        "description": {
+            "text": "Mine 64 minerais de chaque sorte"
+        },
+        "icon": {
+            "item": "minecraft:deepslate_iron_ore"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:difficile"
+    },
+    "parent": "obscurion:mineursimple"
+}

@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Prendre de la Hauteur"
+        },
+        "description": {
+            "text": "Atteinds la couche 1000"
+        },
+        "icon": {
+            "item": "minecraft:elytra"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:impossible"
+    },
+    "parent": "obscurion:root"
+}

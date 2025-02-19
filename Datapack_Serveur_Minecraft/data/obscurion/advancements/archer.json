@@ -1,0 +1,174 @@
+{
+    "display": {
+        "title": {
+            "text": "Archer Motivé"
+        },
+        "description": {
+            "text": "Possède tous les types de flèches dans ton inventaire"
+        },
+        "icon": {
+            "item": "minecraft:spectral_arrow"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:inventory_changed",
+
+            "conditions": {
+
+                "items": [
+
+                    {
+
+                        "item": "minecraft:arrow"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:night_vision"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:invisibility"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:leaping"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:fire_resistance"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:swiftness"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:slowness"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:turtle_master"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:water_breathing"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:healing"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:harming"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:poison"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:regeneration"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:strength"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:weakness"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:luck"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:tipped_arrow",
+
+                        "potion": "minecraft:slow_falling"
+
+                    },
+
+                    {
+
+                        "item": "minecraft:spectral_arrow"
+
+                    }
+
+                ]
+
+            }
+        }
+    },
+    "reward": {
+        "function": "advancement:impossible"
+    },
+    "parent": "obscurion:aroot"
+}

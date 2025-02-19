@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Mumbo Jumbo"
+        },
+        "description": {
+            "text": "Craft tous les items de Redstone (sans les boutons/portes...)"
+        },
+        "icon": {
+            "item": "minecraft:redstone"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:difficile"
+    },
+    "parent": "obscurion:root"
+}

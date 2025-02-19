@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Carla"
+        },
+        "description": {
+            "text": "Être tué par un titan"
+        },
+        "icon": {
+            "item": "minecraft:player_head"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:difficile"
+    },
+    "parent": "obscurion:spawn_titan"
+}

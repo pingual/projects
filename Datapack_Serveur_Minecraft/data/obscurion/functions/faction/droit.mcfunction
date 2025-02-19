@@ -1,0 +1,12 @@
+execute as @s[tag=Commandant] run tag @s add droitCo
+execute as @s[tag=Commandant] run tag @s add droitCa
+execute as @s[tag=Commandant] run tag @s add droitCi
+execute as @s[tag=Capitaine] run tag @s add droitCa
+execute as @s[tag=Capitaine] run tag @s add droitCi
+execute as @s[tag=Capitaine] run tag @s remove droitCo
+execute as @s[tag=Membre] run tag @s add droitCi
+execute as @s[tag=Membre] run tag @s remove droitCo
+execute as @s[tag=Membre] run tag @s remove droitCa
+execute as @s[tag=Citoyen] run tag @s add droitCi
+execute as @s[tag=Citoyen] run tag @s remove droitCo
+execute as @s[tag=Citoyen] run tag @s remove droitCa

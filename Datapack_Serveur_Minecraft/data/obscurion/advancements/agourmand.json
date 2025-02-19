@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Gourmand"
+        },
+        "description": {
+            "text": "Manger 10 gâteaux"
+        },
+        "icon": {
+            "item": "minecraft:cake"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:difficile"
+    },
+    "parent": "obscurion:root"
+}

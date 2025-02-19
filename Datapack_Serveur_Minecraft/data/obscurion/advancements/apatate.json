@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "T'es une Patate"
+        },
+        "description": {
+            "text": "Manger 3 stacks de pommes de terre en 30 minutes"
+        },
+        "icon": {
+            "item": "minecraft:potato"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:tres_difficile"
+    },
+    "parent": "obscurion:root"
+}

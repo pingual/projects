@@ -1,0 +1,27 @@
+{
+    "display": {
+        "title": {
+            "text": "Vacciné de Force "
+        },
+        "description": {
+            "text": "Fais-toi soigner par un allié avec une potion jetable de vie instantanée"
+        },
+        "icon": {
+            "item": "minecraft:splash_potion",
+            "nbt": "{Potion:\"minecraft:water\",CustomPotionEffects:[{Id:6}]}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:moyen"
+    },
+    "parent": "obscurion:root"
+}

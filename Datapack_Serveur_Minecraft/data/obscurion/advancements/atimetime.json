@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "♪ Time Time ♪"
+        },
+        "description": {
+            "text": "Remplis ton inventaire de montres (au moins une par slot, même dans ta main gauche)"
+        },
+        "icon": {
+            "item": "minecraft:clock"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:difficile"
+    },
+    "parent": "obscurion:root"
+}

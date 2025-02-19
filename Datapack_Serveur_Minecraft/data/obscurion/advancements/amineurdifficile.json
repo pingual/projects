@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Mineur de l'Extrême"
+        },
+        "description": {
+            "text": "Mine 128 minerais de chaque sorte"
+        },
+        "icon": {
+            "item": "minecraft:deepslate_gold_ore"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:tres_difficile"
+    },
+    "parent": "obscurion:mineurmoyen"
+}

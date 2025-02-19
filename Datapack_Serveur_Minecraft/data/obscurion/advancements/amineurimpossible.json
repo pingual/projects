@@ -1,0 +1,26 @@
+{
+    "display": {
+        "title": {
+            "text": "Mineur Fou"
+        },
+        "description": {
+            "text": "Mine 1000 minerais de chaque sorte"
+        },
+        "icon": {
+            "item": "minecraft:deepslate_diamond_ore"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "reward": {
+        "function": "advancement:impossible"
+    },
+    "parent": "obscurion:mineurdifficile"
+}

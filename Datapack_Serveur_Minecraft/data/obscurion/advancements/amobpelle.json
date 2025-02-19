@@ -1,0 +1,23 @@
+{
+    "display": {
+        "title": {
+            "text": "Lucas larme à l’œil"
+        },
+        "description": {
+            "text": "Tuer un mob avec une pelle en fer"
+        },
+        "icon": {
+            "item": "minecraft:iron_shovel"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "obscurion:root"
+}

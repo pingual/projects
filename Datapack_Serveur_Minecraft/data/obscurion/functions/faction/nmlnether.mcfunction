@@ -1,0 +1,12 @@
+execute as @e[tag=Claim] at @s if block ~-1 255 ~ light unless block ~-1 255 ~ light[level=15] run fill ~ 255 ~ ~4 255 ~15 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~ 255 ~-1 light unless block ~ 255 ~-1 light[level=15] run fill ~ 255 ~ ~15 255 ~4 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~16 255 ~ light unless block ~16 255 ~ light[level=15] run fill ~11 255 ~ ~15 255 ~15 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~ 255 ~16 light unless block ~ 255 ~16 light[level=15] run fill ~ 255 ~11 ~15 255 ~15 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~16 255 ~ light unless block ~16 255 ~ light[level=15] run fill ~11 255 ~16 ~20 255 ~20 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~16 255 ~ light unless block ~16 255 ~ light[level=15] run fill ~11 255 ~-1 ~20 255 ~-5 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~ 255 ~16 light unless block ~ 255 ~16 light[level=15] run fill ~16 255 ~11 ~20 255 ~20 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~ 255 ~16 light unless block ~ 255 ~16 light[level=15] run fill ~-1 255 ~11 ~-5 255 ~20 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~ 255 ~-1 light unless block ~ 255 ~-1 light[level=15] run fill ~16 255 ~4 ~20 255 ~-5 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~ 255 ~-1 light unless block ~ 255 ~-1 light[level=15] run fill ~-5 255 ~-5 ~-1 255 ~4 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~-1 255 ~ light unless block ~-1 255 ~ light[level=15] run fill ~-5 255 ~16 ~4 255 ~20 light[level=15] keep
+execute as @e[tag=Claim] at @s if block ~-1 255 ~ light unless block ~-1 255 ~ light[level=15] run fill ~-5 255 ~-1 ~4 255 ~-5 light[level=15] keep
