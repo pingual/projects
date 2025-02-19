@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Craft.dague-fer"
+        },
+        "description": {
+            "text": "Description"
+        },
+        "icon": {
+            "item": "minecraft:knowledge_book"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "minecraft:dague_fer"
+            }
+        }
+    },
+    "rewards": {
+        "function": "alcool:dague_fer"
+    },
+    "parent": "alcool:graal"
+}

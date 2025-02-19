@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Craft.graal"
+        },
+        "description": {
+            "text": ""
+        },
+        "icon": {
+            "item": "minecraft:knowledge_book"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true,
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "minecraft:graal"
+            }
+        }
+    },
+    "rewards": {
+        "function": "item:craft_graal"
+    }
+}

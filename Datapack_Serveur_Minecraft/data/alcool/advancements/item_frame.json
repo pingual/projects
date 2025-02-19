@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Craft.itemframe"
+        },
+        "description": {
+            "text": "Description"
+        },
+        "icon": {
+            "item": "minecraft:knowledge_book"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "minecraft:item_frame_invisible"
+            }
+        }
+    },
+    "rewards": {
+        "function": "alcool:item_frame"
+    },
+    "parent": "alcool:graal"
+}

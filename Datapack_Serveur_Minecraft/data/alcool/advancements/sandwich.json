@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Craft.sandwich"
+        },
+        "description": {
+            "text": "Description"
+        },
+        "icon": {
+            "item": "minecraft:knowledge_book"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "minecraft:sandwich"
+            }
+        }
+    },
+    "rewards": {
+        "function": "alcool:sandwich"
+    },
+    "parent": "alcool:graal"
+}
