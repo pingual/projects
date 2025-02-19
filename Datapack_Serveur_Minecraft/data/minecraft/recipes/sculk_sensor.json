@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"TAT",
+		"CCC"
+	],
+	"key": {
+		"T": {
+			"item": "minecraft:pointed_dripstone"
+		},
+		"A": {
+			"item": "minecraft:amethyst_shard"
+		},
+		"C": {
+			"item": "minecraft:crying_obsidian"
+		}
+	},
+	"result": {
+		"item": "minecraft:sculk_sensor",
+		"count": 1
+	}
+}
