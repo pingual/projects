@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mon site internet</title>
+  <style>
+    /* Styles CSS ici */
+    body {
+    background-image: url("fondecran2.png");
+    background-size: auto; /* Adjust the background size to cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    margin: 0; /* Remove default body margin to fill the entire viewport */
+    padding: 0; /* Remove default body padding to fill the entire viewport */
+  }
+    #rectangle {
+      border: 0px solid black;
+      padding: 10px;
+      position: relative; /* Permet de positionner l'image à l'intérieur du rectangle */
+      width: 575px; /* Définissez la largeur souhaitée du rectangle */
+      height: 575px; /* Définissez la hauteur souhaitée du rectangle */
+      left: 50px; /* Centrer horizontalement à 350px du bord gauche */
+      top: 50px; /* Centrer verticalement à 350px du bord supérieur */
+      cursor: grab; /* Ajout du pointeur de souris lorsqu'on survole le rectangle */
+    }
+
+    #container {
+      position: relative; /* Définir la position relative pour que #nextCardButton soit positionné par rapport à ce conteneur */
+    }
+  
+    #carteImage {
+      position: absolute; /* Position absolue pour placer l'image par rapport au rectangle */
+      top: 50%; /* La moitié de la hauteur du rectangle */
+      left: 50%; /* La moitié de la largeur du rectangle */
+      transform: translate(-50%, -50%); /* Décalage de l'image de moitié de sa propre taille pour la centrer */
+      max-width: 100%; /* L'image ne dépassera pas la largeur du rectangle */
+      max-height: 100%; /* L'image ne dépassera pas la hauteur du rectangle */
+    }
+
+    #nextCardButton {
+      background-image: url("test.png");
+      position: absolute;
+      top: 75px;
+      left: 710px;
+      width: 293px; /* Ajout d'une largeur plus grande pour le bouton */
+      height: 399px; /* Ajout d'une hauteur plus grande pour le bouton */
+      cursor: grabbing; /* Ajout du pointeur de souris lorsqu'on survole le rectangle */
+    }
+
+    #rectangle2 {
+      position: absolute;
+      top: 700px;
+      left: 10px;
+      font-size: 24px;
+      color: rgb(0, 0, 0);
+    }
+
+    #oeufImage {
+      position: absolute;
+      top: 50px;
+      left: 1100px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #oeufCheckbox {
+      position: absolute;
+      top: 70px;
+      left: 1150px;
+      cursor: pointer;
+    }
+
+    #pouleImage {
+      position: absolute;
+      top: 150px;
+      left: 1100px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #pouleCheckbox {
+      position: absolute;
+      top: 170px;
+      left: 1150px;
+      cursor: pointer;
+    }
+
+    #renardImage {
+      position: absolute;
+      top: 250px;
+      left: 1100px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #renardCheckbox {
+      position: absolute;
+      top: 270px;
+      left: 1150px;
+      cursor: pointer;
+    }
+
+    #fermierImage {
+      position: absolute;
+      top: 350px;
+      left: 1100px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #fermierCheckbox {
+      position: absolute;
+      top: 370px;
+      left: 1150px;
+      cursor: pointer;
+    }
+
+    #chienImage {
+      position: absolute;
+      top: 450px;
+      left: 1100px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #chienCheckbox {
+      position: absolute;
+      top: 470px;
+      left: 1150px;
+      cursor: pointer;
+    }
+
+    #renardpouleImage {
+      position: absolute;
+      top: 550px;
+      left: 1100px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #renardpouleCheckbox {
+      position: absolute;
+      top: 570px;
+      left: 1150px;
+      cursor: pointer;
+    }
+
+    #verImage {
+      position: absolute;
+      top: 650px;
+      left: 1100px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #verCheckbox {
+      position: absolute;
+      top: 670px;
+      left: 1150px;
+      cursor: pointer;
+    }
+
+    #canardImage {
+      position: absolute;
+      top: 50px;
+      left: 1250px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #canardCheckbox {
+      position: absolute;
+      top: 70px;
+      left: 1300px;
+      cursor: pointer;
+    }
+
+    #coqImage {
+      position: absolute;
+      top: 150px;
+      left: 1250px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #coqCheckbox {
+      position: absolute;
+      top: 170px;
+      left: 1300px;
+      cursor: pointer;
+    }
+
+    #autrucheImage {
+      position: absolute;
+      top: 250px;
+      left: 1250px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #autrucheCheckbox {
+      position: absolute;
+      top: 270px;
+      left: 1300px;
+      cursor: pointer;
+    }
+
+    #oeufpaqueImage {
+      position: absolute;
+      top: 350px;
+      left: 1250px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #oeufpaqueCheckbox {
+      position: absolute;
+      top: 370px;
+      left: 1300px;
+      cursor: pointer;
+    }
+
+    #cocoteImage {
+      position: absolute;
+      top: 450px;
+      left: 1250px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #cocoteCheckbox {
+      position: absolute;
+      top: 470px;
+      left: 1300px;
+      cursor: pointer;
+    }
+
+    #pinpinImage {
+      position: absolute;
+      top: 550px;
+      left: 1250px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #pinpinCheckbox {
+      position: absolute;
+      top: 570px;
+      left: 1300px;
+      cursor: pointer;
+    }
+
+    #lapinImage {
+      position: absolute;
+      top: 650px;
+      left: 1250px;
+      width: 50px;
+      height: 50px;
+      cursor: help;
+    }
+
+    #lapinCheckbox {
+      position: absolute;
+      top: 670px;
+      left: 1300px;
+      cursor: pointer;
+    }
+
+    #pseudo_input {
+      position: absolute;
+      top: 10px;
+      left: 710px;
+      width: 350px; /* Ajustez la largeur selon vos besoins */
+      font-size: 32px;
+    }
+
+    #texte_score {
+      position: absolute;
+      top: 490px;
+      left: 710px;
+      overflow-y: scroll;
+      width: 350px; /* Modifier la largeur */
+      height: 200px;
+      cursor: not-allowed;
+    }
+
+    .infobulle {
+      position: absolute;
+      background-color: #333;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      display: none;
+    }
+
+  </style>
+  
+  
+</head>
+<body>
+  <div id="rectangle">
+    <img id="carteImage" src="" alt="Carte" />
+  </div>
+  <div id="rectangle2">Partie en cours</div>
+  <div id="buttons">
+  <button id="nextCardButton">Prochaine carte</button>
+  <img id="oeufpaqueImage" src="oeuf paque.png" alt="Oeuf de Paques" />
+  <input type="checkbox" id="oeufpaqueCheckbox">
+  <div class="infobulle" id="oeufpaqueInfobulle">C'est un oeuf mais qui n'est pas couvé par les poules ni ramassé par le fermier</div>
+  <img id="cocoteImage" src="cocote.png" alt="Cocote" />
+  <input type="checkbox" id="cocoteCheckbox">
+  <div class="infobulle" id="cocoteInfobulle">Elle va couver un oeuf de Pâques déjà disponible</div>
+  <img id="pinpinImage" src="pinpin.png" alt="Pinpin" />
+  <input type="checkbox" id="pinpinCheckbox">
+  <div class="infobulle" id="pinpinInfobulle">Remplace un oeuf disponible par un oeuf de Pâques</div>
+  <img id="lapinImage" src="lapin paque.png" alt="Lapin de Paques" />
+  <input type="checkbox" id="lapinCheckbox">
+  <div class="infobulle" id="lapinInfobulle">Jusqu'à la fin de la manche, quand un oeuf arrive, il le cache et ne le relâche qu'après que la prochaine carte ait été jouée</div>
+  <img id="oeufImage" src="oeuf.png" alt="Oeuf" />
+  <input type="checkbox" id="oeufCheckbox" checked>
+  <div class="infobulle" id="oeufInfobulle">Il faut compter les oeufs</div>
+  <img id="pouleImage" src="poule.png" alt="Poule" />
+  <input type="checkbox" id="pouleCheckbox" checked>
+  <div class="infobulle" id="pouleInfobulle">Couve un oeuf déjà disponible</div>
+  <img id="renardImage" src="renard.png" alt="Renard" />
+  <input type="checkbox" id="renardCheckbox" checked>
+  <div class="infobulle" id="renardInfobulle">Chasse une poule qui couve</div>
+  <img id="fermierImage" src="fermier.png" alt="Fermier" />
+  <input type="checkbox" id="fermierCheckbox">
+  <div class="infobulle" id="fermierInfobulle">Ramasse tous les oeufs et les cocottes</div>
+  <img id="chienImage" src="chien.png" alt="Chien" />
+  <input type="checkbox" id="chienCheckbox">
+  <div class="infobulle" id="chienInfobulle">Chasse le prochain renard qui arrive</div>
+  <img id="verImage" src="ver de terre.png" alt="Ver de terre" />
+  <input type="checkbox" id="verCheckbox">
+  <div class="infobulle" id="verInfobulle">Attire la prochaine poule qui arrive</div>
+  <img id="coqImage" src="coq.png" alt="Coq" />
+  <input type="checkbox" id="coqCheckbox">
+  <div class="infobulle" id="coqInfobulle">Déclenche la fin de la manche. Il faut dire le nombre d'oeufs disponible</div>
+  <img id="autrucheImage" src="oeuf autruche.png" alt="Autruche" />
+  <input type="checkbox" id="autrucheCheckbox">
+  <div class="infobulle" id="autrucheInfobulle">Compte comme deux oeufs et ne peut pas être couvé</div>
+  <img id="renardpouleImage" src="renard déguisé en poule.png" alt="Renard déguisé en poule" />
+  <input type="checkbox" id="renardpouleCheckbox">
+  <div class="infobulle" id="renardpouleInfobulle">N'est pas repéré par le chien</div>
+  <img id="canardImage" src="canard.png" alt="Canard" />
+  <input type="checkbox" id="canardCheckbox">
+  <div class="infobulle" id="canardInfobulle">Il faut dire "Coin!" pour le premier et "Coin! Coin!" pour le deuxième</div>
+  <input type="text" id="pseudo_input" placeholder="Entrez votre pseudo">
+  <textarea id="texte_score" rows="5" cols="30" readonly>Contenu que vous souhaitez afficher ici...</textarea>  
+</div>
+  
+  <!-- <div id="texte_score"></div>
+
+  <!-- Inclure la bibliothèque Socket.io -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
+
+  <script>
+    // Se connecter au serveur Socket.io
+    const socket = io();
+    let carte_a_afficher=""
+    let username = ''
+    let username_aleatoire = 'joueur'+Math.random().toString();
+    //const oeufCheckbox = document.getElementById("oeufCheckbox");
+    //oeufCheckbox.checked = true ou false
+    const pseudoInput = document.getElementById("pseudo_input");
+    pseudoInput.addEventListener("input", () => {
+      // Mettre à jour la variable username avec la valeur du champ de saisie
+      username = pseudoInput.value;
+    });
+    // Gérer l'événement de réception d'une nouvelle carte
+    socket.on('nouvelleCarte', (carte,cmpt) => {
+      afficherCarte(carte);
+      const rectangle = document.getElementById("rectangle2");
+      rectangle.textContent = "Partie en cours. " + cmpt + " cartes retournées";
+    });
+
+    // Gérer l'événement de réception de la fin de la partie
+    socket.on('finDePartie', (resultat, totalOeufs) => {
+      afficherFinDePartie(resultat, totalOeufs);
+    });
+
+    socket.on('afficherScore', (resultat) => {
+      const texte_score = document.getElementById("texte_score");
+
+      var classement = Object.entries(resultat).sort((a, b) => b[1] - a[1]);
+
+      // Générer le texte à afficher dans la zone de texte
+      var texteClassement = "";
+      classement.forEach((element, index) => {
+        texteClassement += `${index + 1}. ${element[0]}: ${element[1]}\n`;
+      });
+
+      // Mettre à jour le contenu de la zone de texte avec le classement
+      document.getElementById("texte_score").value = texteClassement;
+        });
+
+
+        // Fonction pour afficher une carte
+        function afficherCarte(carte) {
+        const carteImage = document.getElementById("carteImage");
+        carteImage.src = "test.png";
+        carte_a_afficher=carte
+        setTimeout(function() {
+          carteImage.src = carte + ".png";
+        },100);
+  }
+
+    // Fonction pour afficher la fin de partie
+    function afficherFinDePartie(resultat, totalOeufs) {
+      const rectangle = document.getElementById("rectangle2");
+      rectangle.textContent = "Fin de la partie : " + resultat + " Total d'œufs : " + totalOeufs;
+      console.log(resultat);
+      if (resultat=="Vous avez gagné !") {
+        if (username=='') {
+          socket.emit('ajouterScore',username_aleatoire);
+        } else {
+          socket.emit('ajouterScore',username);
+        }
+      }
+    }
+
+    // Fonction pour envoyer l'événement de prochaine carte au serveur
+    function prochaineCarte() {
+      socket.emit('carteSuivante');
+    }
+
+    // Fonction pour envoyer l'événement de fin de partie au serveur
+    function finDePartie() {
+      socket.emit('finPartie');
+    }
+
+    // Attacher les écouteurs d'événements aux boutons
+    document.getElementById("nextCardButton").addEventListener("click", prochaineCarte);
+    document.getElementById("rectangle").addEventListener("click", finDePartie);
+    const oeufImage = document.getElementById("oeufImage");
+    const oeufInfobulle = document.getElementById("oeufInfobulle");
+    oeufImage.addEventListener("mouseover", () => {
+      oeufInfobulle.style.display = "block";
+    });
+    oeufImage.addEventListener("mouseout", () => {
+      oeufInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      oeufInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      oeufInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const pouleImage = document.getElementById("pouleImage");
+    const pouleInfobulle = document.getElementById("pouleInfobulle");
+    pouleImage.addEventListener("mouseover", () => {
+      pouleInfobulle.style.display = "block";
+    });
+    pouleImage.addEventListener("mouseout", () => {
+      pouleInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      pouleInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      pouleInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    
+    const renardImage = document.getElementById("renardImage");
+    const renardInfobulle = document.getElementById("renardInfobulle");
+    renardImage.addEventListener("mouseover", () => {
+      renardInfobulle.style.display = "block";
+    });
+    renardImage.addEventListener("mouseout", () => {
+      renardInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      renardInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      renardInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const fermierImage = document.getElementById("fermierImage");
+    const fermierInfobulle = document.getElementById("fermierInfobulle");
+    fermierImage.addEventListener("mouseover", () => {
+      fermierInfobulle.style.display = "block";
+    });
+    fermierImage.addEventListener("mouseout", () => {
+      fermierInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      fermierInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      fermierInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const chienImage = document.getElementById("chienImage");
+    const chienInfobulle = document.getElementById("chienInfobulle");
+    chienImage.addEventListener("mouseover", () => {
+      chienInfobulle.style.display = "block";
+    });
+    chienImage.addEventListener("mouseout", () => {
+      chienInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      chienInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      chienInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const renardpouleImage = document.getElementById("renardpouleImage");
+    const renardpouleInfobulle = document.getElementById("renardpouleInfobulle");
+    renardpouleImage.addEventListener("mouseover", () => {
+      renardpouleInfobulle.style.display = "block";
+    });
+    renardpouleImage.addEventListener("mouseout", () => {
+      renardpouleInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      renardpouleInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      renardpouleInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const canardImage = document.getElementById("canardImage");
+    const canardInfobulle = document.getElementById("canardInfobulle");
+    canardImage.addEventListener("mouseover", () => {
+      canardInfobulle.style.display = "block";
+    });
+    canardImage.addEventListener("mouseout", () => {
+      canardInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      canardInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      canardInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const coqImage = document.getElementById("coqImage");
+    const coqInfobulle = document.getElementById("coqInfobulle");
+    coqImage.addEventListener("mouseover", () => {
+      coqInfobulle.style.display = "block";
+    });
+    coqImage.addEventListener("mouseout", () => {
+      coqInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      coqInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      coqInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const verImage = document.getElementById("verImage");
+    const verInfobulle = document.getElementById("verInfobulle");
+    verImage.addEventListener("mouseover", () => {
+      verInfobulle.style.display = "block";
+    });
+    verImage.addEventListener("mouseout", () => {
+      verInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      verInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      verInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const autrucheImage = document.getElementById("autrucheImage");
+    const autrucheInfobulle = document.getElementById("autrucheInfobulle");
+    autrucheImage.addEventListener("mouseover", () => {
+      autrucheInfobulle.style.display = "block";
+    });
+    autrucheImage.addEventListener("mouseout", () => {
+      autrucheInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      autrucheInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      autrucheInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const oeufpaqueImage = document.getElementById("oeufpaqueImage");
+    const oeufpaqueInfobulle = document.getElementById("oeufpaqueInfobulle");
+    oeufpaqueImage.addEventListener("mouseover", () => {
+      oeufpaqueInfobulle.style.display = "block";
+    });
+    oeufpaqueImage.addEventListener("mouseout", () => {
+      oeufpaqueInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      oeufpaqueInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      oeufpaqueInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const cocoteImage = document.getElementById("cocoteImage");
+    const cocoteInfobulle = document.getElementById("cocoteInfobulle");
+    cocoteImage.addEventListener("mouseover", () => {
+      cocoteInfobulle.style.display = "block";
+    });
+    cocoteImage.addEventListener("mouseout", () => {
+      cocoteInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      cocoteInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      cocoteInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const pinpinImage = document.getElementById("pinpinImage");
+    const pinpinInfobulle = document.getElementById("pinpinInfobulle");
+    pinpinImage.addEventListener("mouseover", () => {
+      pinpinInfobulle.style.display = "block";
+    });
+    pinpinImage.addEventListener("mouseout", () => {
+      pinpinInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      pinpinInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      pinpinInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const lapinImage = document.getElementById("lapinImage");
+    const lapinInfobulle = document.getElementById("lapinInfobulle");
+    lapinImage.addEventListener("mouseover", () => {
+      lapinInfobulle.style.display = "block";
+    });
+    lapinImage.addEventListener("mouseout", () => {
+      lapinInfobulle.style.display = "none";
+    });
+
+    // Suivre la souris pour positionner l'infobulle
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.pageX;
+      const mouseY = event.pageY;
+      lapinInfobulle.style.left = mouseX + 20 + "px"; // Décalage de 20px à droite de la souris
+      lapinInfobulle.style.top = mouseY + "px"; // Alignement vertical avec la souris
+    });
+
+    const renardpouleCheckbox = document.getElementById("renardpouleCheckbox");
+    let renardpoule_coche = renardpouleCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    renardpouleCheckbox.addEventListener("change", () => {
+      renardpoule_coche = renardpouleCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', renardpoule_coche,'Renardpoule');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxRenardpoule', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      renardpoule_coche = etatCheckbox;
+      renardpouleCheckbox.checked = etatCheckbox;
+    });
+
+    const pouleCheckbox = document.getElementById("pouleCheckbox");
+    let poule_coche = pouleCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    pouleCheckbox.addEventListener("change", () => {
+      poule_coche = pouleCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', poule_coche,'Poule');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxPoule', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      poule_coche = etatCheckbox;
+      pouleCheckbox.checked = etatCheckbox;
+    });
+
+    const renardCheckbox = document.getElementById("renardCheckbox");
+    let renard_coche = renardCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    renardCheckbox.addEventListener("change", () => {
+      renard_coche = renardCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', renard_coche,'Renard');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxRenard', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      renard_coche = etatCheckbox;
+      renardCheckbox.checked = etatCheckbox;
+    });
+
+    const fermierCheckbox = document.getElementById("fermierCheckbox");
+    let fermier_coche = fermierCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    fermierCheckbox.addEventListener("change", () => {
+      fermier_coche = fermierCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', fermier_coche,'Fermier');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxFermier', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      fermier_coche = etatCheckbox;
+      fermierCheckbox.checked = etatCheckbox;
+    });
+
+    const chienCheckbox = document.getElementById("chienCheckbox");
+    let chien_coche = chienCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    chienCheckbox.addEventListener("change", () => {
+      chien_coche = chienCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', chien_coche,'Chien');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxChien', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      chien_coche = etatCheckbox;
+      chienCheckbox.checked = etatCheckbox;
+    });
+
+    const verCheckbox = document.getElementById("verCheckbox");
+    let ver_coche = verCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    verCheckbox.addEventListener("change", () => {
+      ver_coche = verCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', ver_coche,'Ver');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxVer', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      ver_coche = etatCheckbox;
+      verCheckbox.checked = etatCheckbox;
+    });
+
+    const autrucheCheckbox = document.getElementById("autrucheCheckbox");
+    let autruche_coche = autrucheCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    autrucheCheckbox.addEventListener("change", () => {
+      autruche_coche = autrucheCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', autruche_coche,'Autruche');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxAutruche', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      autruche_coche = etatCheckbox;
+      autrucheCheckbox.checked = etatCheckbox;
+    });
+
+    const canardCheckbox = document.getElementById("canardCheckbox");
+    let canard_coche = canardCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    canardCheckbox.addEventListener("change", () => {
+      canard_coche = canardCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', canard_coche,'Canard');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxCanard', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      canard_coche = etatCheckbox;
+      canardCheckbox.checked = etatCheckbox;
+    });
+
+    const cocoteCheckbox = document.getElementById("cocoteCheckbox");
+    let cocote_coche = cocoteCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    cocoteCheckbox.addEventListener("change", () => {
+      cocote_coche = cocoteCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', cocote_coche,'Cocote');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxCocote', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      cocote_coche = etatCheckbox;
+      cocoteCheckbox.checked = etatCheckbox;
+    });
+
+    const coqCheckbox = document.getElementById("coqCheckbox");
+    let coq_coche = coqCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    coqCheckbox.addEventListener("change", () => {
+      coq_coche = coqCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', coq_coche,'Coq');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxCoq', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      coq_coche = etatCheckbox;
+      coqCheckbox.checked = etatCheckbox;
+    });
+
+    const pinpinCheckbox = document.getElementById("pinpinCheckbox");
+    let pinpin_coche = pinpinCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    pinpinCheckbox.addEventListener("change", () => {
+      pinpin_coche = pinpinCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', pinpin_coche,'Pinpin');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxPinpin', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      pinpin_coche = etatCheckbox;
+      pinpinCheckbox.checked = etatCheckbox;
+    });
+
+    const oeufCheckbox = document.getElementById("oeufCheckbox");
+    let oeuf_coche = oeufCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    oeufCheckbox.addEventListener("change", () => {
+      oeuf_coche = oeufCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', oeuf_coche,'Oeuf');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxOeuf', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      oeuf_coche = etatCheckbox;
+      oeufCheckbox.checked = etatCheckbox;
+    });
+
+    const lapinCheckbox = document.getElementById("lapinCheckbox");
+    let lapin_coche = lapinCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    lapinCheckbox.addEventListener("change", () => {
+      lapin_coche = lapinCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', lapin_coche,'Lapin');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxLapin', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      lapin_coche = etatCheckbox;
+      lapinCheckbox.checked = etatCheckbox;
+    });
+
+    const oeufpaqueCheckbox = document.getElementById("oeufpaqueCheckbox");
+    let oeufpaque_coche = oeufpaqueCheckbox.checked; // Variable pour stocker l'état de la case à cocher (non cochée par défaut)
+    oeufpaqueCheckbox.addEventListener("change", () => {
+      oeufpaque_coche = oeufpaqueCheckbox.checked;
+      // Envoyer l'événement au serveur pour mettre à jour l'état de la case à cocher
+      socket.emit('miseAJourCheckbox', oeufpaque_coche,'Oeufpaque');
+    });
+
+    // Gérer l'événement de réception de la mise à jour de la case à cocher depuis le serveur
+    socket.on('miseAJourCheckboxOeufpaque', (etatCheckbox) => {
+      // Mettre à jour l'état de la case à cocher en fonction de l'état reçu depuis le serveur
+      oeufpaque_coche = etatCheckbox;
+      oeufpaqueCheckbox.checked = etatCheckbox;
+    });
+
+    socket.on('coqFin', (nb_oeufs) => {
+      proposition=window.prompt("Combien d'oeufs sont disponibles?");
+      if (proposition==nb_oeufs) {
+        socket.emit('coqTermineG');
+      } else {
+        socket.emit('coqTermineP');
+      }
+    });
+
+  </script>
+</body>
+</html>
