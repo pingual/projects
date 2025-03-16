@@ -1,0 +1,57 @@
+execute as @s at @s run summon area_effect_cloud ~ ~1 ~ {Tags:["ChancardSmurf"],Age:1}
+execute as @s at @s store result score Rand ChancardSmurf run data get entity @e[type=area_effect_cloud,tag=ChancardSmurf,limit=1] UUIDMost 0.00000000023283064
+execute as @s at @s run scoreboard players operation Rand ChancardSmurf %= max ChancardSmurf
+execute as @s at @s run kill @e[type=area_effect_cloud,tag=ChancardSmurf]
+execute at @s if score Rand ChancardSmurf matches 0 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_helmet",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 1 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_chestplate",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 2 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_leggings",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 3 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_boots",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 4 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:iron_helmet",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 5 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:iron_chestplate",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 6 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:iron_leggings",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 7 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:iron_boots",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 8 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond_helmet",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 9 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond_chestplate",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 10 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond_leggings",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 11 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond_boots",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 12 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:chainmail_helmet",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 13 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:chainmail_chestplate",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 14 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:chainmail_leggings",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 15 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:chainmail_boots",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 16 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:leather_helmet",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 17 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:leather_chestplate",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 18 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:leather_leggings",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 19 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:leather_boots",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 20 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:turtle_shell",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 21 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_sword",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 22 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_axe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 23 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_pickaxe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 24 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_shovel",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 25 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:golden_hoe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 26 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:wooden_sword",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 27 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:wooden_axe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 28 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:wooden_pickaxe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 29 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:wooden_shovel",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 30 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:wooden_hoe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 31 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone_sword",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 32 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone_axe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 33 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone_pickaxe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 34 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone_shovel",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 35 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone_hoe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 36 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:iron_sword",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 37 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:iron_axe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 38 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:iron_pickaxe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 39 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:iron_shovel",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 40 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:iron_hoe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 41 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond_sword",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 42 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond_axe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 43 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond_pickaxe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 44 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond_shovel",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 45 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:diamond_hoe",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 46 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 47 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:fishing_rod",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 48 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:flint_and_steel",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 49 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:shears",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 50 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:bow",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 51 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:shield",Count:1b,tag:{Damage:10}}}
+execute at @s if score Rand ChancardSmurf matches 52 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:elytra",Count:1b,tag:{Damage:10}}}

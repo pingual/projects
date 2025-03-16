@@ -1,0 +1,52 @@
+execute as @s at @s run summon area_effect_cloud ~ ~1 ~ {Tags:["MusicienSmurf"],Age:1}
+execute as @s at @s store result score Rand MusicienSmurf run data get entity @e[type=area_effect_cloud,tag=MusicienSmurf,limit=1] UUIDMost 0.00000000023283064
+execute as @s at @s run scoreboard players operation Rand MusicienSmurf %= max MusicienSmurf
+execute as @s at @s run kill @e[type=area_effect_cloud,tag=MusicienSmurf]
+execute at @s if score Rand MusicienSmurf matches 0 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:oak_log",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 1 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:oak_planks",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 2 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:chest",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 3 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:crafting_table",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 4 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:sand",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 5 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:red_sand",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 6 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:gravel",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 7 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:soul_sand",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 8 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:white_concrete_powder",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 9 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:glass",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 10 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:white_stained_glass",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 11 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:beacon",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 12 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:sea_lantern",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 13 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:stone",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 14 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:bricks",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 15 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:obsidian",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 16 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:terracotta",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 17 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:netherrack",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 18 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:purpur_block",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 19 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:gold_block",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 20 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:clay",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 21 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:compacted_ice",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 22 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:white_wool",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 23 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:bone_block",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 24 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:iron_block",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 25 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:soul_sand",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 26 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:pumpkin",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 27 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:emerald_block",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 28 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:hay_bale",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 29 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:glowstone",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 30 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:dirt",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 31 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:oak_leaves",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 32 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:sponge",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 33 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:melon",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 59..92 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:note_block",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 46..58 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:jukebox",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 34 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_13",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 35 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_cat",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 36 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_blocks",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 37 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_chirp",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 38 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_far",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 39 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_mall",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 40 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_mellohi",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 41 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_stal",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 42 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_strad",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 43 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_ward",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 44 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_11",Count:1b}}
+execute at @s if score Rand MusicienSmurf matches 45 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:music_disc_wait",Count:1b}}

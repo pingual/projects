@@ -1,0 +1,15 @@
+execute as @s at @s run summon area_effect_cloud ~ ~1 ~ {Tags:["CosmoSchtroumpf"],Age:1}
+execute as @s at @s store result score Rand CosmoSchtroumpf run data get entity @e[type=area_effect_cloud,tag=CosmoSchtroumpf,limit=1] UUIDMost 0.00000000023283064
+execute as @s at @s run scoreboard players operation Rand CosmoSchtroumpf %= max CosmoSchtroumpf
+execute as @s at @s run kill @e[type=area_effect_cloud,tag=CosmoSchtroumpf]
+execute at @s if score Rand CosmoSchtroumpf matches 0 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:25,Duration:1200}],HideFlags:32,display:{Name:"Potion de Vol"}}}}
+execute at @s if score Rand CosmoSchtroumpf matches 1 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:25,Amplifier:1,Duration:1200}],HideFlags:32,display:{Name:"Potion de Vol"}}}}
+execute at @s if score Rand CosmoSchtroumpf matches 2 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:25,Amplifier:2,Duration:1200}],HideFlags:32,display:{Name:"Potion de Vol"}}}}
+execute at @s if score Rand CosmoSchtroumpf matches 3 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:25,Amplifier:3,Duration:600}],HideFlags:32,display:{Name:"Potion de Vol"}}}}
+execute at @s if score Rand CosmoSchtroumpf matches 4 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:25,Amplifier:4,Duration:300}],HideFlags:32,display:{Name:"Potion de Vol"}}}}
+execute at @s if score Rand CosmoSchtroumpf matches 5 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:25,Amplifier:5,Duration:150}],HideFlags:32,display:{Name:"Potion de Vol"}}}}
+execute at @s if score Rand CosmoSchtroumpf matches 6 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:25,Amplifier:6,Duration:75}],HideFlags:32,display:{Name:"Potion de Vol"}}}}
+execute at @s if score Rand CosmoSchtroumpf matches 7 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:25,Amplifier:7,Duration:38}],HideFlags:32,display:{Name:"Potion de Vol"}}}}
+execute at @s if score Rand CosmoSchtroumpf matches 8 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:potion",Count:1b,tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:25,Amplifier:8,Duration:19}],HideFlags:32,display:{Name:"Potion de Vol"}}}}
+execute at @s if score Rand CosmoSchtroumpf matches 9 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:elytra",Count:1b,tag:{Damage:1000000431}}}
+execute at @s if score Rand CosmoSchtroumpf matches 10 run summon minecraft:item ~ ~ ~ {Item:{id:"minecraft:glass",Count:1b,tag:{display:{Name:'{"text":"Casque de Cosmonaute","color":"white","italic":false}'}}}}
