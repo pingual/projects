@@ -1,0 +1,2 @@
+tellraw @a {"text":"-----------------------------------------------------\nPour calculer une racine carrée, cliquez sur ce message\npuis écrivez le nombre dont vous souhaitez calculer la\nracine carrée!\n-----------------------------------------------------","clickEvent":{"action":"suggest_command","value":"/trigger Racine_Carree set "}}
+scoreboard players reset @s Racine_Carree
