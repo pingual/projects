@@ -67,10 +67,9 @@ class Camera:
         
         rec = HitRecord()
         if not world.hit(r, Interval(0.001, infinity), rec):
-            #unit_direction = unit_vector(r.direction())
-            #a = 0.5 * (unit_direction.y() + 1.0)
-            #return (1.0 - a) * Color(1.0, 1.0, 1.0) + a * Color(0.5, 0.7, 1.0)
-            return Color(0,0,0)
+            unit_direction = unit_vector(r.direction())
+            a = 0.5 * (unit_direction.y() + 1.0)
+            return (1.0 - a) * Color(1.0, 1.0, 1.0) + a * Color(0.5, 0.7, 1.0)
         emitted = rec.material.emitted()
         scatter_success, attenuation, scattered = rec.material.scatter(r, rec)
         if scatter_success:
@@ -110,4 +109,5 @@ class Camera:
                     write_color(f,pixel_color/self.samples_per_pixel)
 
         print("\nDone.")
+
 
