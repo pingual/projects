@@ -2,15 +2,8 @@ Voici quelques projets aboutis que j'ai réalisé durant ces dernières années 
 
 # 1. 3D Ray Tracing engine in Python with physical simulation
 
-<video width="640" height="360" controls>
-  <source src="3D-Ray-Tracing-and-Physics-Simulation/physics_simulation1.mp4" type="video/mp4">
-  There's a problem with your web browser.
-</video>
-
-<video width="640" height="360" controls>
-  <source src="3D-Ray-Tracing-and-Physics-Simulation/physics_simulation2.mp4" type="video/mp4">
-  There's a problem with your web browser.
-</video>
+![Physical simulation](physics_simulation1.gif)
+![Physical simulation with reflection](physics_simulation2.gif)
 
 # 2. Javascript
 - Site internet permettant de jouer au jeu de société Poule Poule en multijoueur à travers le monde [(lien vers le fichier)](Jeu_Poule_Poule_site/server.js)
