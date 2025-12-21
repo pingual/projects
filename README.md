@@ -1,4 +1,4 @@
-Voici quelques projets aboutis que j'ai réalisé durant ces dernières années :
+Here are some completed projects I have done over the last few years:
 
 # 1. 3D Ray Tracing engine in Python with physical simulation
 
@@ -6,13 +6,11 @@ Voici quelques projets aboutis que j'ai réalisé durant ces dernières années 
 ![Physical simulation with reflection](physics_simulation2.gif)
 
 # 2. Javascript
-- Site internet permettant de jouer au jeu de société Poule Poule en multijoueur à travers le monde [(lien vers le fichier)](Jeu_Poule_Poule_site/server.js)
+- Website allowing users to play the board game "Poule Poule" in multiplayer mode across the world. [(lien vers le fichier)](Jeu_Poule_Poule_site/server.js)
 # 3. Python
-- Site internet servant de base de données de films vus, tout en téléchargeant automatiquement des images des films et en permettant de voir dans quels autres films les acteurs ont joué [(lien vers le fichier de code principal)](Base_de_donnée_films/app.py)
-- Bot discord ajoutant un emploi du temps personnalisé en fonction des membres, ajoute un message d'anniversaire [(lien vers le fichier)](Bots_discord/bot_principal_emploi_du_temps.py)
-- Bot discord ajoutant un calcul de classement en demandant les notes aux élèves et ajoute les exercices CCINP pour [(lien vers le fichier)](Bots_discord/bot_exercices_ccinp_et_classement.py)
+- Website serving as a database of films watched, automatically downloading pictures from the films and allowing users to see which other films the actors have starred in. [(lien vers le fichier de code principal)](Base_de_donnée_films/app.py)
+- Discord bot that adds a personalised schedule based on members, adds a birthday message... [(lien vers le fichier)](Bots_discord/bot_principal_emploi_du_temps.py)
+- Discord bot that calculates rankings by asking students for their marks and adds CCINP exercises [(lien vers le fichier)](Bots_discord/bot_exercices_ccinp_et_classement.py)
 # 4. Brainfuck
-- Code permettant de jouer au morpion contre un robot jouant bien [(lien vers le fichier)](Brainfuck/morpion_robot.bf)
-- Programme générant des QR codes en lui fournissant le lien voulu [(lien vers le fichier)](Brainfuck/QR_code.bf)
-# 5. Minecraft
-- Datapack implémentant de nombreuses fonctionnalités personnalisées spécialement pour un projet de serveur [(lien vers les différentes fonctionnalités)](Datapack_Serveur_Minecraft/data)
+- Code for playing tic-tac-toe against a skilled robot [(lien vers le fichier)](Brainfuck/morpion_robot.bf)
+- Programme that generates QR codes by providing it with the wanted link [(lien vers le fichier)](Brainfuck/QR_code.bf)
