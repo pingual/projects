@@ -1,8 +1,8 @@
 Here are some completed projects I have done over the last few years:
 
 # Reports
-Geometric optimization for designing modular cycling tracks from recycled curved panels [(link to the report)](Reports/PierreBodetReportInternship.pdf)
-Multi-robot coordination and strategy optimisation in a maze using genetic algorithms [(link to the report)](Reports/Rapport%20TIPE%20Pierre%20BODET.pdf)
+- Geometric optimization for designing modular cycling tracks from recycled curved panels [(link to the report)](Reports/PierreBodetReportInternship.pdf)
+- Multi-robot coordination and strategy optimisation in a maze using genetic algorithms [(link to the report)](Reports/Rapport%20TIPE%20Pierre%20BODET.pdf)
 
 # 1. Sign Language Alphabet Recognition
 
